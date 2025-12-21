@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 
 const skills = [
     { name: "ReactJS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "LWC", logo: "/src/assets/lwc.svg" },
-    { name: "APEX", logo: "/src/assets/apex.svg" },
+    { name: "LWC", logo: "/lwc.svg" },
+    { name: "APEX", logo: "/apex.svg" },
     { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
     { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "TailwindCSS", logo: "/src/assets/tailwind-css-seeklogo.svg" },
+    { name: "TailwindCSS", logo: "/tailwind-css-seeklogo.svg" },
     { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
@@ -15,7 +15,7 @@ const skills = [
     { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
     { name: "SOQL", logo: "https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/circle-stack.svg" },
-    { name: "Flows", logo: "/src/assets/flow.svg" },
+    { name: "Flows", logo: "/flow.svg" },
     { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
     { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -23,7 +23,7 @@ const skills = [
     { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
     { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    { name: "Render", logo: "/src/assets/render-seeklogo.svg" },
+    { name: "Render", logo: "/render-seeklogo.svg" },
     { name: "Cloudinary", logo: "https://res.cloudinary.com/cloudinary/image/upload/v1591813967/cloudinary_logo_for_white_bg.svg" },
     { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
 ];

@@ -45,7 +45,7 @@ const ProjectsPage = () => {
             category: 'fullstack',
             github: 'https://github.com/ay-sha/Nivaasi',
             liveDemo: 'https://nivaasi.onrender.com/',
-            image: '/src/assets/Projects/nivaasi.png',
+            image: '/Projects/nivaasi.png',
             impact: 'Enhanced user engagement and simplified property discovery and management.',
         },
         // {
@@ -70,7 +70,7 @@ const ProjectsPage = () => {
             category: 'frontend',
             github: 'https://github.com/ay-sha/Defiine',
             liveDemo: 'https://ay-sha.github.io/Defiine/',
-            image: '/src/assets/Projects/defiine.PNG',
+            image: '/Projects/defiine.PNG',
             impact: 'Improved vocabulary access and learning efficiency.',
         },
         {
@@ -82,7 +82,7 @@ const ProjectsPage = () => {
             category: 'frontend',
             github: 'https://github.com/ay-sha/Infinity',
             liveDemo: 'https://ay-sha.github.io/Infinity/',
-            image: '/src/assets/Projects/infinity.PNG',
+            image: '/Projects/infinity.PNG',
             impact: 'Strengthened the company\'s digital presence.',
         },
         {
@@ -94,7 +94,7 @@ const ProjectsPage = () => {
             category: 'fullstack',
             github: 'https://github.com/ay-sha/DIU_NoteShare',
             liveDemo: null,
-            image: '/src/assets/Projects/noteshare.jpg',
+            image: '/Projects/noteshare.jpg',
             impact: 'Improved collaboration and easier access to study materials.',
         },
         // {
@@ -119,7 +119,7 @@ const ProjectsPage = () => {
             category: 'fullstack',
             github: 'https://github.com/ay-sha/Remover',
             liveDemo: null,
-            image: '/src/assets/Projects/remover.jpeg',
+            image: '/Projects/remover.jpeg',
             impact: 'Simplified image editing and saved user time.',
         },
         {
@@ -131,7 +131,7 @@ const ProjectsPage = () => {
             category: 'graphics',
             github: 'https://github.com/ay-sha/2D_CarGame',
             liveDemo: null,
-            image: '/src/assets/Projects/2Dgame.jpg',
+            image: '/Projects/2Dgame.jpg',
             impact: 'Strengthened understanding of game logic and graphics rendering.',
         },
     ];
