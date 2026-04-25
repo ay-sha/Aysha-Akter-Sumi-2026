@@ -2,7 +2,7 @@ services:
   - type: web
     name: portfolio
     region: oregon
-    buildCommand: npm install && npm run build && mkdir -p backend/frontend && cp -r dist/* backend/frontend/
+    buildCommand: cd frontend && npm install && npm run build && cp -r dist ../backend/frontend
     startCommand: cd backend && node server.js
     envVars:
       - key: NODE_ENV

@@ -77,8 +77,6 @@ app.post('/api/admin/login', (req, res) => { if (req.body.username === process.e
 // Frontend path - check multiple locations
 const possiblePaths = [
   path.join(__dirname, 'frontend', 'dist'),  // render builds here
-  path.join(__dirname, '..', 'frontend', 'dist'),  // relative to backend
-  '/opt/render/project/src/backend/frontend/dist',  // absolute render path
 ];
 
 let distPath = possiblePaths.find(p => fs.existsSync(path.join(p, 'index.html')));
