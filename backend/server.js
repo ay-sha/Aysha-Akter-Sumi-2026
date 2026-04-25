@@ -103,6 +103,10 @@ app.get('/index.html', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });

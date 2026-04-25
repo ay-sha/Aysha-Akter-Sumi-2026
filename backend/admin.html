@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Aysha's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Admin Panel</h1>
+    
+    <div id="loginSection" class="hidden">
+      <div class="bg-gray-800 p-6 rounded-lg">
+        <h2 class="text-xl mb-4">Login</h2>
+        <input id="username" type="text" placeholder="Username" class="w-full mb-3 p-2 bg-gray-700 rounded">
+        <input id="password" type="password" placeholder="Password" class="w-full mb-3 p-2 bg-gray-700 rounded">
+        <button onclick="login()" class="bg-blue-600 px-4 py-2 rounded">Login</button>
+        <p id="loginError" class="text-red-500 mt-2 hidden"></p>
+      </div>
+    </div>
+
+    <div id="adminSection" class="hidden">
+      <div class="grid gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h2 class="text-xl mb-4">Profile</h2>
+          <textarea id="profile" class="w-full h-32 bg-gray-700 p-2 rounded font-mono text-sm"></textarea>
+          <button onclick="save('profile')" class="bg-green-600 px-4 py-2 rounded mt-2">Save</button>
+        </div>
+        
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h2 class="text-xl mb-4">Experiences</h2>
+          <textarea id="experiences" class="w-full h-48 bg-gray-700 p-2 rounded font-mono text-sm"></textarea>
+          <button onclick="save('experiences')" class="bg-green-600 px-4 py-2 rounded mt-2">Save</button>
+        </div>
+        
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h2 class="text-xl mb-4">Projects</h2>
+          <textarea id="projects" class="w-full h-48 bg-gray-700 p-2 rounded font-mono text-sm"></textarea>
+          <button onclick="save('projects')" class="bg-green-600 px-4 py-2 rounded mt-2">Save</button>
+        </div>
+        
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h2 class="text-xl mb-4">Skills</h2>
+          <textarea id="skills" class="w-full h-32 bg-gray-700 p-2 rounded font-mono text-sm"></textarea>
+          <button onclick="save('skills')" class="bg-green-600 px-4 py-2 rounded mt-2">Save</button>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h2 class="text-xl mb-4">Education</h2>
+          <textarea id="education" class="w-full h-32 bg-gray-700 p-2 rounded font-mono text-sm"></textarea>
+          <button onclick="save('education')" class="bg-green-600 px-4 py-2 rounded mt-2">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API = '';
+    let token = localStorage.getItem('adminToken');
+    
+    if (token) showAdmin();
+    
+    function showLogin() {
+      document.getElementById('loginSection').classList.remove('hidden');
+      document.getElementById('adminSection').classList.add('hidden');
+    }
+    
+    function showAdmin() {
+      document.getElementById('loginSection').classList.add('hidden');
+      document.getElementById('adminSection').classList.remove('hidden');
+      loadData();
+    }
+    
+    async function login() {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      const res = await fetch(API + '/api/admin/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username: u, password: p})
+      });
+      const data = await res.json();
+      if (data.success) {
+        token = btoa(u + ':' + p);
+        localStorage.setItem('adminToken', token);
+        showAdmin();
+      } else {
+        document.getElementById('loginError').textContent = data.error || 'Login failed';
+        document.getElementById('loginError').classList.remove('hidden');
+      }
+    }
+    
+    async function loadData() {
+      const endpoints = ['profile', 'experiences', 'projects', 'skills', 'education'];
+      for (const ep of endpoints) {
+        try {
+          const res = await fetch(API + '/api/' + ep);
+          const data = await res.json();
+          document.getElementById(ep).value = JSON.stringify(data, null, 2);
+        } catch (e) {
+          document.getElementById(ep).value = 'Error loading data';
+        }
+      }
+    }
+    
+    async function save(field) {
+      try {
+        const data = JSON.parse(document.getElementById(field).value);
+        const res = await fetch(API + '/api/' + field, {
+          method: 'PUT',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+        alert(field + ' saved!');
+      } catch (e) {
+        alert('Error: ' + e.message);
+      }
+    }
+    
+    if (!token) showLogin();
+  </script>
+</body>
+</html>
