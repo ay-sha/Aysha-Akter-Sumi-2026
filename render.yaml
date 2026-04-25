@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: portfolio
+    region: oregon
+    buildCommand: npm install && npm run build && mkdir -p backend/frontend && cp -r dist/* backend/frontend/
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: ${MONGODB_URI}
+      - key: ADMIN_USERNAME
+        value: ${ADMIN_USERNAME}
+      - key: ADMIN_PASSWORD
+        value: ${ADMIN_PASSWORD}
+      - key: PORT
+        value: 5000

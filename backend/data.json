@@ -1,0 +1,26 @@
+{
+  "profile": {
+    "name": "Aysha Akter Sumi",
+    "title": "Software Engineer",
+    "description": "Building Scalable, User-Centric Applications.",
+    "aboutDescription": [
+      "I'm a software engineer with experience across full-stack development and enterprise systems. I focus on designing clean architectures, building reliable back-end logic, and creating intuitive front-end experiences.",
+      "Currently, I work at Twinforce Solution Limited, contributing to large-scale applications used by hundreds of users."
+    ],
+    "currentCompany": "Twinforce Solution Limited",
+    "phone": "+8801884394630",
+    "email": "ayshaaktersumi630@gmail.com",
+    "instagram": "https://www.instagram.com/aysha__amin_",
+    "github": "http://github.com/ay-sha",
+    "linkedin": "http://www.linkedin.com/in/aysha-akter-sumi"
+  },
+  "experiences": [
+    { "id": 1, "position": "Jr. Salesforce Developer", "company": "Twinforce Solution Limited", "startMonth": "November", "startYear": "2025", "endMonth": "", "endYear": "", "duration": "Current", "location": "Dhaka, Bangladesh", "type": "Full-time", "description": "Leading development of enterprise Salesforce solutions.", "responsibilities": ["Architected Car Dealership System", "Built LWC components", "Implemented APEX logic"], "technologies": ["Salesforce APEX", "LWC", "SOQL"], "achievements": ["Handle 1600+ transactions"], "isCurrent": true, "icon": "FaCloud", "color": "from-secondary/10 to-secondary/30" },
+    { "id": 2, "position": "Salesforce Developer Intern", "company": "Twinforce Solution Limited", "startMonth": "August", "startYear": "2025", "endMonth": "October", "endYear": "2025", "duration": "3 Months", "location": "Dhaka, Bangladesh", "type": "Internship", "description": "Hands-on Salesforce development.", "responsibilities": ["Developed LWC", "Implemented APEX"], "technologies": ["Salesforce", "APEX"], "achievements": ["Production features"], "isCurrent": false, "icon": "FaBriefcase", "color": "from-secondary/10 to-secondary/30" }
+  ],
+  "education": [
+    { "id": 1, "degree": "BSc in Computer Science & Engineering", "institution": "Daffodil International University", "startMonth": "January", "startYear": "2020", "endMonth": "October", "endYear": "2024", "duration": "4 Years", "location": "Dhaka, Bangladesh", "grade": "CGPA: 3.93/4.00", "achievements": ["Merit Scholarship"], "courses": ["Data Structures", "Database Systems"], "icon": "FaUniversity", "color": "from-secondary/10 to-secondary/30" }
+  ],
+  "projects": [],
+  "skills": []
+}
