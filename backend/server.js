@@ -72,11 +72,17 @@ app.get('/api/education', async (req, res) => { if (mongoReady && Education) try
 app.put('/api/education', async (req, res) => { if (mongoReady && Education) try { await Education.deleteMany({}); await Education.insertMany(req.body); } catch {} db.education = req.body; saveFallback(); res.json({success:true}); });
 app.get('/api/skills', async (req, res) => { if (mongoReady && Skill) try { const d = await Skill.find(); if (d.length) return res.json(d); } catch {} res.json(db.skills); });
 app.put('/api/skills', async (req, res) => { if (mongoReady && Skill) try { await Skill.deleteMany({}); await Skill.insertMany(req.body); } catch {} db.skills = req.body; saveFallback(); res.json({success:true}); });
-app.post('/api/admin/login', (req, res) => { if (req.body.username === process.env.ADMIN_USERNAME && req.body.password === process.env.ADMIN_PASSWORD) res.json({success:true}); else res.status(401).json({error:'Invalid'}); });
+app.post('/api/admin/login', (req, res) => { 
+  const user = process.env.ADMIN_USERNAME || 'admin';
+  const pass = process.env.ADMIN_PASSWORD || 'admin123';
+  if (req.body.username === user && req.body.password === pass) res.json({success:true}); 
+  else res.status(401).json({error:'Invalid'}); 
+});
 
 // Frontend path - check multiple locations
 const possiblePaths = [
-  path.join(__dirname, 'frontend', 'dist'),  // render builds here
+  path.join(__dirname, '..', 'frontend', 'dist'),
+  '/opt/render/project/src/frontend/dist',
 ];
 
 let distPath = possiblePaths.find(p => fs.existsSync(path.join(p, 'index.html')));
